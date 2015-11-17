@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	body{background:#000;text-align:center;}
+	#c1{background:#fff};
+	</style>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',function(){
+		var oC = document.getElementById('c1');
+		var gd = oC.getContext('2d');
+		gd.moveTo(200,60);
+		gd.lineTo(10,60);
+		gd.moveTo(100,60);
+		gd.lineTo(100,228);
+		gd.moveTo(200,140);
+		gd.lineTo(10,140);
+		gd.moveTo(200,230);
+		gd.lineTo(10,230);
+		gd.moveTo(300,60);
+		gd.lineTo(210,250);
+		gd.moveTo(400,60);
+		gd.lineTo(480,250);
+		gd.stroke();
+	},false);
+	</script>
+</head>
+<body>
+	<canvas id="c1" width="800" height="800"></canvas>
+</body>
+</html>
