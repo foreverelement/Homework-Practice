@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<link href="style/conmmon.css" type="text/css" rel="stylesheet">
+<link href="style/zns_ui.css" type="text/css" rel="stylesheet">
+<!--[if IE 6]>
+	<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript" src="js/ie6Fixpng.js"></script>
+<![endif]-->
+<script>
+window.onload=function(){
+	var oPage = document.getElementById('page');
+    var oAdd = document.getElementById('ad');
+    var oClose = oAdd.getElementsByTagName('span')[0];
+    setTimeout(function(){
+        oAdd.style.display = 'block';
+        oPage.style.WebkitFilter = 'blur(3px)';
+        oPage.style.filter = 'blur(3px)';
+    },3000);
+
+    oClose.onclick = function(){
+        oAdd.style.display = 'none';
+        oPage.style.WebkitFilter = '';
+        oPage.style.filter = '';
+    };
+};
+</script>
+</head>
+
+<body>
+<div id="page">
+    <div class="headerBar">
+        <div class="header" id="header">
+            <ul class="leftNav" id="leftNav">
+                <li><a href="#">设为首页</a></li>
+                <li id="my_menu_box">
+                    <a href="#">我的菜单<i></i></a>
+                    <div class="showList">
+                        <dl>
+                            <dd><a href="#">内容1</a></dd>
+                            <dd><a href="#">内容2</a></dd>
+                            <dd><a href="#">内容3</a></dd>
+                            <dd><a href="#">内容4</a></dd>
+                            <dd><a href="#">内容5</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li><a href="#">手机新浪网</a></li>
+                <li><a href="#">移动客户端<i></i></a>
+                    <div class="showList">
+                        <dl>
+                            <dd><a href="#">内容1</a></dd>
+                            <dd><a href="#">内容2</a></dd>
+                            <dd><a href="#">内容3</a></dd>
+                            <dd><a href="#">内容4</a></dd>
+                            <dd><a href="#">内容5</a></dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <ul class="leftNav leftNav_right">
+                <li>
+                    <a href="#" style="padding-right:30px;">我的<i></i></a>
+                    <div class="showList">
+                        <dl>
+                            <dd><a href="#">内容1</a></dd>
+                            <dd><a href="#">内容2</a></dd>
+                            <dd><a href="#">内容3</a></dd>
+                            <dd><a href="#">内容4</a></dd>
+                            <dd><a href="#">内容5</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li><a href="#">手机新浪网</a></li>
+                <li><a href="#">博客博<i></i></a>
+                    <div class="showList" style="position:absolute; z-index:2;">
+                        <dl>
+                            <dd><a href="#">内容1</a></dd>
+                            <dd><a href="#">内容2</a></dd>
+                            <dd><a href="#">内容3</a></dd>
+                            <dd><a href="#">内容4</a></dd>
+                            <dd><a href="#">内容5</a></dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navUser">
+                <li class="clearfix"><span>欢迎您,</span><a href="#" class="userName">北京智能社</a><a href="#">退出</a></li>
+            </ul>
+            <ul class="login ">
+                <li><a href="#" class="login_a">登陆</a>
+                    <div class="showLogin" style="display:none;">
+                        <div class="showLoginBg"></div>
+                        <div class="showLoginList">
+                            <p>新浪微博、博客、邮箱帐号，请直接登录</p>
+                            <div class="logintxt"><span>请登录邮箱</span><input type="text" class="txt"></div>
+                            <div class="logintxt"><span>请输入密码</span><input type="password" class="txt"></div>
+                            <div class="loginbtn">
+                                <input type="button" class="btn" value="登录">
+                                <label for="check"><input type="checkbox" id="check"><span>下次自动登录</span></label>
+                                <div class="loginOther"><a href="#">忘记密码</a><a href="#">立即注册</a></div>
+                            </div>
+                        </div>
+                        <div class="showLoginClose"><a href="#">×</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hr_15"></div>
+    <div class="logoWarp clearfix">
+        <a href="javascript:;" class="logo"></a>
+        <div class="scarchBox" id="weibo_searchBox">
+            <span class="searchTxt">
+                微博
+            </span>
+            <div class="plece" id="place_focus">
+                <span>请输入文字</span>
+                <input type="text" class="searchInputs">
+                <div class="pleceWrap" style="display:none;">
+                    <div class="pleceWrap_tip">大家正在搜:</div>
+                    <ul class="pleceWrap_item hide">
+                        <li class="hover"><a href="#">李莉娜</a></li>
+                        <li><a href="#">绝命毒师</a></li>
+                        <li><a href="#">无车日</a></li>
+                        <li><a href="#">非洲大蜗牛</a></li>
+                        <li><a href="#">土豪金</a></li>
+                        <li><a href="#">半泽直树</a></li>
+                        <li><a href="#">白色座头鲸</a></li>
+                        <li><a href="#">赵薇</a></li>
+                    </ul>            
+                    <div class="pleceWrap_more"><a href="#" class="pleceWrap_more_hotAll">完整热搜榜&gt;&gt;</a><a href="#" class="pleceWrap_more_toHomePage">进入搜索首页&gt;&gt;</a></div>
+                </div>
+            </div>
+            <a href="javascript:;" class="searchBtn"><input type="button" class=""></a>
+            <ul class="list">
+                <li><a href="#">微博</a></li>
+                <li><a href="#">邮箱</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">新闻</a></li>
+                <li><a href="#">更多&gt;&gt;</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hr_15"></div>
+    <div class="listNav comWidth clearfix" id="select_box">
+        <div class="listBtn">
+            <div class="list_choice"><span>关注选中</span><label><input type="checkbox"><span>全选</span></label><label><input type="button" value="反选"></label><label><input type="button" value="不选"></label></div>
+        </div>
+        <div class="list_item_box">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>新闻</strong></span></label></li><li><label><input type="checkbox"><span>军事</span></label></li><li><label><input type="checkbox"><span>社会</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>财经</strong></span></label></li><li><label><input type="checkbox"><span>股票</span></label></li><li><label><input type="checkbox"><span>基金</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>科技</strong></span></label></li><li><label><input type="checkbox"><span>手机</span></label></li><li><label><input type="checkbox"><span>探索</span></label></li></ul>
+        </div>
+        <div class="list_item_box">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>体育</strong></span></label></li><li><label><input type="checkbox"><span>英超</span></label></li><li><label><input type="checkbox"><span>NBA</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>娱乐</strong></span></label></li><li><label><input type="checkbox"><span>明星</span></label></li><li><label><input type="checkbox"><span>星座</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>汽车</strong></span></label></li><li><label><input type="checkbox"><span>报价</span></label></li><li><label><input type="checkbox"><span>买车</span></label></li></ul>
+        </div>
+        <div class="list_item_box">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>博客</strong></span></label></li><li><label><input type="checkbox"><span class="red">专栏</span></label></li><li><label><input type="checkbox"><span>天气</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>视频</strong></span></label></li><li><label><input type="checkbox"><span>综艺</span></label></li><li><label><input type="checkbox"><span>育儿</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>房产</strong></span></label></li><li><label><input type="checkbox"><span>二手</span></label></li><li><label><input type="checkbox"><span>家具</span></label></li></ul>
+        </div>
+        <div class="list_item_box">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>城市</strong></span></label></li><li><label><input type="checkbox"><span class="red">北京</span></label></li><li><label><input type="checkbox"><span>上海</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>教育</strong></span></label></li><li><label><input type="checkbox"><span>健康</span></label></li><li><label><input type="checkbox"><span>中医</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>时尚</strong></span></label></li><li><label><input type="checkbox"><span>女性</span></label></li><li><label><input type="checkbox"><span>收藏</span></label></li></ul>
+        </div>
+        <div class="list_item_box">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>游戏</strong></span></label></li><li><label><input type="checkbox"><span class="red">棋牌</span></label></li><li><label><input type="checkbox"><span>页游</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>佛学</strong></span></label></li><li><label><input type="checkbox"><span>基督</span></label></li><li><label><input type="checkbox"><span>出国</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>论坛</strong></span></label></li><li><label><input type="checkbox"><span>交友</span></label></li><li><label><input type="checkbox"><span>UC</span></label></li></ul>
+        </div>
+        <div class="list_item_box last">
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>搜索</strong></span></label></li><li><label><input type="checkbox"><span class="red">微博</span></label></li><li><label><input type="checkbox"><span>终端</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>爱问</strong></span></label></li><li><label><input type="checkbox"><span>客服</span></label></li><li><label><input type="checkbox"><span>邮箱</span></label></li></ul>
+            <ul class="list_item"><li><label><input type="checkbox"><span><strong>公益</strong></span></label></li><li><label><input type="checkbox"><span>导航</span></label></li><li><label><input type="checkbox"><span>英文</span></label></li></ul>
+        </div>
+    </div>
+    <div class="hr_15"></div>
+    <div class="main comWidth clearfix">
+        <div class="leftAd fl">
+            <div class="adSm bor">
+                <a href="#"><img src="img/smad.png" class="img" alt=""></a>
+            </div>
+            <div class="hr_15"></div>
+            <div class="adLeft_b">
+                <a href="#"><img src="img/512108.jpg" class="img"></a>
+            </div>
+            <div class="hr_10"></div>
+            <div class="sinaCp bor bor_t">
+                <div class="comTitle_f bor_b">
+                    <h3><a href="#">新浪产品</a></h3>
+                </div>
+                <div class="sinaCp_List pt10 txtCen">
+                    <a href="#"><img src="img/U8455P30DT20130904115518.png">新浪财经</a>
+                    <a href="#"><img src="img/U8455P30DT20130507113421.png">新浪新闻</a>
+                    <a href="#"><img src="img/U1022P30DT20130725092340.png">新浪体育</a>
+                </div>
+                <div class="sinaCp_txt txtCen">
+                    <a href="#">天气通</a>
+                    <a href="#">公开课</a>
+                    <a href="#">新浪微博</a>
+                </div>
+            </div>
+            <div class="hr_10"></div>
+            <div class="tab_4 bor" id="teach_tab_box">
+                <ul class="tab_title bor_b clearfix titBg">
+                    <li><div class="active">教育</div></li>
+                    <li><div>培训</div></li>
+                    <li><div>招生</div></li>
+                    <li class="last"><div>出国</div></li>
+                </ul>
+                <div class="smList">
+                    <ul class="item show">
+                        <li><a href="#">会中文就会说英语</a><a href="#">北大汇丰万人PE班</a></li>
+                        <li><a href="#">数理化巧学得高分</a><a href="#">北理工国际本硕！</a></li>
+                        <li><a href="#">品质管理硕士招生</a><a href="#">高中学数理化妙招</a></li>
+                        <li><a href="#">北京交通大学EMBA</a><a href="#">北大管理哲学班</a></li>
+                        <li><a href="#">把精彩告诉世界</a><a href="#">学数理化名师妙招</a></li>
+                        <li><a href="#">暑期12天免费学！</a><a href="#">寻找留学深造机会</a></li>
+                        <li><a href="#">用心记录生活点滴</a><a href="#">首选教育网络平台</a></li>
+                    </ul>
+                    <ul class="item">
+                        <li><a href="#">交大总裁班课程！</a><a href="#">NBS创业EMBA热招</a></li>
+                        <li><a href="#">香港中大</a><a href="#">用心记录生活点滴</a></li>
+                        <li><a href="#">品质管理硕士招生</a><a href="#">周易风水、SMBA</a></li>
+                        <li><a href="#">您信赖的资讯信息</a><a href="#">北大管理哲学班</a></li>
+                        <li><a href="#">把精彩告诉世界</a><a href="#">草根名博看世界</a></li>
+                        <li><a href="#">寻找留学深造机会</a><a href="#">学生家长首选教育</a></li>
+                        <li><a href="#">用心记录生活点滴</a><a href="#">首选教育网络平台</a></li>
+                    </ul>
+                    <ul class="item">
+                        <li><a href="#">广外出国留学直通</a><a href="#">NBS创业EMBA热招</a></li>
+                        <li><a href="#">香港中大</a><a href="#">北理工国际本硕！</a></li>
+                        <li><a href="#">品质管理硕士招生</a><a href="#">周易风水、SMBA</a></li>
+                        <li><a href="#">北京交通大学EMBA</a><a href="#">北大管理哲学班</a></li>
+                        <li><a href="#">把精彩告诉世界</a><a href="#">草根名博看世界</a></li>
+                        <li><a href="#">您信赖的资讯信息</a><a href="#">寻找留学深造机会</a></li>
+                        <li><a href="#">用心记录生活点滴</a><a href="#">首选教育网络平台</a></li>
+                    </ul>
+                    <ul class="item">
+                        <li><a href="#">2014美国高端名校</a><a href="#">留学移民品牌联展</a></li>
+                        <li><a href="#">北外留学火热招生</a><a href="#">用心记录生活点滴</a></li>
+                        <li><a href="#">草根精彩告诉世界</a><a href="#">周易风水、SMBA</a></li>
+                        <li><a href="#">北京交通大学EMBA</a><a href="#">北大管理哲学班</a></li>
+                        <li><a href="#">把精彩告诉世界</a><a href="#">草根名博看世界</a></li>
+                        <li><a href="#">您信赖的资讯信息</a><a href="#">寻找留学深造机会</a></li>
+                        <li><a href="#">用心记录生活点滴</a><a href="#">首选教育网络平台</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="rightArea clearfix">
+            <div class="leftBox clearfix mr_20">
+                <div class="newsBox">
+                    <div class="comTitle">
+                        <ul class="comTitle_tabs">
+                            <li class="noBl active"><a href="#">视频</a></li>
+                            <li class=""><a href="#">综艺</a></li>
+                        </ul>
+                        <div class="comTitle_cont">
+                            <span>北京时间:2013.04.24</span>
+                            <!--<a href="#">欢迎监督</a><a href="#">如是举报</a>-->
+                        </div>
+                    </div>
+                    <div class="tab_news pt20">
+                        <dl class="videoList_newList">
+                            <dt>
+                                <a href="#" class="videoList">
+                                    <img src="img/1.png" alt="" class="videoImg">
+                                    <span class="videoIcon"></span>
+                                    <span class="videoBg"></span>
+                                    <span class="videoTxt">测试文字内容</span>
+                                </a>
+                            </dt>
+                            <dd>
+                                <ul class="comList">
+                                    <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                                    <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                                    <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                                    <li><a href="#" class="videoLink">非诚勿扰 非你莫</a></li>
+                                    <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="videoList_newList">
+                            <dt>
+                                <a href="#" class="videoList">
+                                    <img src="img/1.png" alt="" class="videoImg">
+                                    <span class="videoIcon"></span>
+                                    <span class="videoBg"></span>
+                                    <span class="videoTxt">测试文字内容</span>
+                                </a>
+                            </dt>
+                            <dd>
+                                <ul class="comList">
+                                    <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                                    <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                                    <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                                    <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                                    <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <ul class="comList">
+                            <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                        </ul>
+                        <div class="hr_10"></div>
+                        <div class="hr_5"></div>
+                        <div class="comTitle">
+                            <ul class="comTitle_tabs">
+                                <li class="noBl active"><a href="#" class="fl">猜你喜欢</a>
+                                    <div class="drop">
+                                        <a href="javascript:;" class="prev fl"></a>
+                                        <span>
+                                            <i class="active"></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                        </span>
+                                        <a href="javascrtip:;" class="next fl"></a>
+                                    </div>
+                                </li>
+                                <li><a href="#">专栏</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabs clearfix">
+                            <!--猜你喜欢-->
+                            <div class="c_listTab">
+                                <div class="c_list_scroll abs">
+                                    <!--
+                                        两种做法：
+                                        No.1	选项卡  直接操作ul显示或隐藏即可
+                                        No.2 	滚动		需要JS算c_list_scroll的宽度，直接改变left即可。
+                                    -->
+                                    <ul class="comList">
+                                        <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                        <li><a href="#">新史记</a> | <a href="#">傅国涌：杨度为蒋介石不称帝耿耿于怀</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                        <li><a href="#">法庭认定薄熙来犯受贿罪、贪污罪、滥用职权罪</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                    </ul>
+                                    <ul class="comList hide">
+                                        <li><a href="#">观察家</a> | <a href="#">22222美国人“以房养老”为何这么好</a></li>
+                                        <li><a href="#">新史记</a> | <a href="#">傅国涌：杨度为蒋介石不称帝耿耿于怀</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                        <li><a href="#">法庭认定薄熙来犯受贿罪、贪污罪、滥用职权罪</a></li>
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                        <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                    </ul>
+                                    <ul class="comList hide">
+                                        <li><a href="#">观察家</a> | <a href="#">33333美国人“以房养老”为何这么好</a></li>
+                                        <li><a href="#">新史记</a> | <a href="#">傅国涌：杨度为蒋介石不称帝耿耿于怀</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                        <li><a href="#">法庭认定薄熙来犯受贿罪、贪污罪、滥用职权罪</a></li>
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                    </ul>
+                                    <ul class="comList hide">
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                        <li><a href="#">观察家</a> | <a href="#">444444美国人“以房养老”为何这么好</a></li>
+                                        <li><a href="#">新史记</a> | <a href="#">傅国涌：杨度为蒋介石不称帝耿耿于怀</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                        <li><a href="#">法庭认定薄熙来犯受贿罪、贪污罪、滥用职权罪</a></li>
+                                        <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                        <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                        <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--专栏-->
+                            <div class="tabs_item pt10 hide">
+                                <ul class="comList">
+                                    <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                    <li><a href="#">观察家</a> | <a href="#">444444美国人“以房养老”为何这么好</a></li>
+                                    <li><a href="#">新史记</a> | <a href="#">傅国涌：杨度为蒋介石不称帝耿耿于怀</a></li>
+                                    <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                    <li><a href="#">创事记</a> | <a href="#">我为什么不喜欢电子阅读器</a></li>
+                                    <li><a href="#">法庭认定薄熙来犯受贿罪、贪污罪、滥用职权罪</a></li>
+                                    <li><a href="#">特斯拉CEO称三年内推出自动驾驶汽车</a></li>
+                                    <li><a href="#">意见领袖</a> | <a href="#">虫草销售员：反腐败光管月饼没用</a></li>
+                                    <li><a href="#">观察家</a> | <a href="#">乔磊：美国人“以房养老”为何这么好</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--右侧-->
+            <div class="leftBox clearfix">
+                <div class="newsBox">
+                    <div class="comTitle">
+                        <ul class="comTitle_tabs">
+                            <li class="noBl active"><a href="#">视频</a></li>
+                        </ul>
+                        <div class="comTitle_cont">
+                            <span>北京时间:2013.04.24</span>
+                            <!--<a href="#">欢迎监督</a><a href="#">如是举报</a>-->
+                        </div>
+                    </div>
+                    <div class="tab_news pt20">
+                        <ul class="comList mb_5">
+                            <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                        </ul>
+                        <ul class="comList mb_5">
+                            <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                        </ul>
+                        <ul class="comList">
+                            <li><a href="#" class="videoLink">年代秀:222222</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">最强音:霸王条款不签约淘汰</a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                            <li><a href="#" class="videoLink">变女神春日美裙施魔法</a></li>
+                            <li><a href="#" class="videoLink">非诚勿扰 非你莫属 </a></li>
+                        </ul>
+                        <div class="hr_10"></div>
+                        <ul class="comList">
+                            <li><a href="#" class="videoLink">北京五环外房价每平超3万元 逼现河北燕郊日光盘</a></li>
+                            <li><a href="#" class="videoLink">限制公款送礼影响黄牛生意 卡贩生意冷清收入减半</a></li>
+                            <li><a href="#" class="videoLink">83岁“金融巨鳄”索罗娶42岁新娘 系第三次婚姻</a></li>
+                            <li><a href="#" class="videoLink">媒体称年实施65岁退休 需85年才能补上养老金缺口</a></li>
+                            <li><a href="#" class="videoLink">金九银十各地频出日光盘 北京六环内2万元楼盘绝迹</a></li>
+                            <li><a href="#" class="videoLink">谁在绑架网民？搜狗奇虎360爆发中秋口水大战</a></li>
+                            <li><a href="#" class="videoLink">松鼠秀超强“睡功”</a> <a href="#">大胆海鸥踩海雕后背抢食</a></li>
+                            <li><a href="#" class="videoLink">东方影都群星耀青岛 带着微博去郴州</a></li>
+                            <li><a href="#" class="videoLink"> 棋行大地 天下凤凰 誓约圣境 天涯海角</a></li>
+                            <li><a href="#" class="videoLink">特别策划：在秦城监狱的高官</a></li>
+                            <li><a href="#" class="videoLink">日刊:冲绳怀疑有间谍向中国提供渔民出海情报</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="adMiddle" id="ad" style="display:none;"><a href="#"><img src="img/512744_1000x450-50k.jpg" alt=""></a><span>关闭</span></div>
+
+</body>
+</html>

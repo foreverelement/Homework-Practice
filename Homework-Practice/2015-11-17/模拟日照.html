@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟日照</title>
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	strong{width:500px;height:60px;font-size:30px;top:50%;left:50%;margin:-30px 0 0 -250px;position:absolute;text-align:center;text-shadow:0 0 0 #000;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oS = document.getElementById('s1');
+		document.onmousemove = function(ev){
+			var x1 = ev.pageX;
+			var y1 = ev.pageY;
+			var x2 = oS.offsetLeft+oS.offsetWidth/2;
+			var y2 = oS.offsetTop+oS.offsetHeight/2;
+			var disX = (x2-x1)/3;
+			var disY = (y2-y1)/3;
+			document.title = disX+','+disY;
+			var dis = Math.sqrt(disX*disX+disY*disY)/20;
+			oS.style.textShadow = disX+'px'+disY+'px'+dis+'px #000';
+		};
+	};
+	</script>
+</head>
+<body>
+	<strong id="s1">不以风骚惊天下，但求淫荡动世人</strong>
+</body>
+</html>
