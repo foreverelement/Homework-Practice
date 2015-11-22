@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style type="text/css">
+	.box{width:300px;height:300px;margin:100px auto;border:#333 10px solid;border-radius:50%;position:relative;}
+	.box div{background:#333;position:absolute;left:50%;}
+	.box .hours{height:70px;width:16px;top:90px;margin-left:-8px;-webkit-transform-origin:center bottom;}
+	.box .min{height:90px;width:10px;top:70px;margin-left:-5px;-webkit-transform-origin:center bottom;}
+	.box .second{height:120px;width:6px;top:40px;margin-left:-3px;-webkit-transform-origin:center bottom;}
+	.box span{width:4px;height:8px;background:#333;position:absolute;top:0;left:50%;margin-left:-2px;-webkit-transform-origin:center 150px;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oBox = document.querySelector('.box');
+		var oHours = document.querySelector('.box .hours');
+		var oMin = document.querySelector('.box .min');
+		var oSec = document.querySelector('.box .second');
+		for(var i=0;i<60;i++){
+			var oS = document.createElement('span');
+			oS.style.WebkitTransform='rotate('+i*6+'deg)';
+			oBox.appendChild(oS);
+		}
+		function tick(){
+			var oDate = new Date();
+			oHours.style.WebkitTransform = 'rotate('+oDate.getHours()*30+'deg)';
+			oMin.style.WebkitTransform = 'rotate('+oDate.getMinutes()*6+'deg)';
+			oSec.style.WebkitTransform = 'rotate('+oDate.getSeconds()*6+'deg)';
+		}
+		tick();
+		setInterval(tick,1000);
+	};
+	</script>
+</head>
+<body>
+	<div class="box">
+		<!--360 12 30-->
+		<div class="hours"></div>
+		<!--360 60 6-->
+		<div class="min"></div>
+		<!--360 60 6-->
+		<div class="second"></div>
+	</div>
+</body>
+</html>
