@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地理信息3</title>
+	<script type="text/javascript">
+	navigator.geolocation.getCurrentPosition(function(){
+		alert('成功');
+	},function(err){
+		alert('失败'+err.code+'哈哈'+err.message);
+	});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

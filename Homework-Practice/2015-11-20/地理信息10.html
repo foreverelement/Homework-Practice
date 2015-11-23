@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地理信息10</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oBtn = document.body.children[0];
+		var id = navigator.geolocation.WatchPosition(function(pos){
+			alert(pos.coords.longitude+','+pos.coords.latitude);
+		},function(err){
+			alert(err.code+','+err.message);
+		});
+
+		oBtn.onclick = function(){
+			navigator.geolocation.clearWatch(id);
+		};
+	};
+	</script>
+</head>
+<body>
+	<input type="button" value="停止">
+</body>
+</html>

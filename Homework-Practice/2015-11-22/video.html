@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+*{margin:0; padding:0;}
+#playBox{width:500px;margin:100px auto;background:#000;position:relative;}
+#bar_box{width:500px;height:20px; background:#ccc;  position:absolute; bottom:30px; left:0;}
+#bar{width:0; height:20px; background:#f0f0f0;  position:absolute; top:0; left:0;}
+#bar_btn{width:30px; height:20px; background:#399;  position:absolute; top:0; left:0; z-index:2; cursor:pointer;}
+</style>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+function time2min(time){
+	var sMin = parseInt(time/60);
+	var sSec = parseInt(time%60);
+	return toDou(sMin)+':'+toDou(sSec);
+}
+window.onload=function(){
+	var oBtn1 = document.querySelector('#btn1');
+	var oBtn2 = document.querySelector('#btn2');
+	var oBtn3 = document.querySelector('#btn3');
+	var oBarBox = document.getElementById('bar_box');
+	var oBar = document.getElementById('bar');
+	var oBarBtn = document.getElementById('bar_btn');
+	var oS = document.querySelector('span');
+	var oV = document.querySelector('video');
+	oBtn1.onclick=function(){
+		oV.play();
+	};
+	oBtn2.onclick=function(){
+		oV.pause();
+	};
+	oBtn3.onclick=function(){
+		oV.pause();
+		oV.currentTime=0;
+	};
+	oV.ontimeupdate=function(){
+		oS.innerHTML=time2min(oV.currentTime)+'/'+time2min(oV.duration);
+		var scale = oV.currentTime/oV.duration;
+		oBar.style.width = scale*oBarBox.offsetWidth+'px';
+		oBarBtn.style.left = scale*(oBarBox.offsetWidth-oBarBtn.offsetWidth)+'px';
+	};
+	oBarBtn.onmousedown=function(ev){
+		var disX = ev.clientX-oBarBtn.offsetLeft;
+		oV.pause();
+		document.onmousemove=function(ev){
+			var l =ev.clientX-disX;
+			
+			oBarBtn.style.left = l+'px';
+			var scale =l/(oBarBox.offsetWidth-oBarBtn.offsetWidth);
+			oBar.style.width = scale*oBarBox.offsetWidth+'px';
+			oV.currentTime = scale*oV.duration;
+			oV.play();
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+
+<div id="playBox">
+	<video src="http://images.sohu.com/ytv/SH/Coke/64036020120714021103.mp4"></video>
+	<input type="button" value="播放" id="btn1" />
+	<input type="button" value="暂停" id="btn2" />
+	<input type="button" value="停止" id="btn3" />
+	<div id="bar_box">
+		<div id="bar"></div>
+		<div id="bar_btn"></div>
+	</div>
+	<span>00:00/00:00</span>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

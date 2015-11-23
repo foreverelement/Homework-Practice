@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	@-webkit-keyframes move{
+		from {-webkit-transform:translateX(0px)}
+		to {-webkit-transform:translateX(-600px);}
+	}
+	#box{width:600px;height:30px;margin:100px auto;border:#ccc 1px solid;overflow:hidden;border-radius:10px;}
+	#bar{width:1200px;height:30px;background:
+		-webkit-repeating-linear-gradient(-30deg,#ee5f5b 0,#ee5f5b 50px,#c43c35 50px,#c43c35 100px);
+		-webkit-animation-name:move;
+		-webkit-animation-duration:5s;
+		-webkit-animation-timing-function:linear;
+		-webkit-animation-iteration-count:infinite;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="bar"></div>
+	</div>
+</body>
+</html>

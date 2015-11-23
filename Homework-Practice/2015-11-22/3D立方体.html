@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#box{width:200px;height:200px;margin:100px auto;position:relative;-webkit-transform-style: preserve-3d;-webkit-transform:perspective(800px) rotateX(70deg) rotateY(70deg);-webkit-transition:1s all ease;}
+	#box div{width:100%;height:100%;border:#333 1px solid;position:absolute;top:0;left:0;line-height:200px;text-align:center;}
+	#box .front{background:#005eac;-webkit-transform:translateZ(100px) }
+	#box .back{background:yellow;-webkit-transform:translateZ(-100px);}
+	#box .left{background:red;-webkit-transform:translateX(-100px) rotateY(-90deg);}
+	#box .right{background:blue;-webkit-transform:translateX(100px) rotateY(90deg);}
+	#box .top{background:#399;-webkit-transform:translateY(-100px) rotateX(90deg);}
+	#box .bottom{background:#f60;-webkit-transform:translateY(100px) rotateX(-90deg);}
+	#box:hover{-webkit-transform:perspective(800px) rotateY(720deg) rotateX(720deg)}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="front">前</div>
+		<div class="back">后</div>
+		<div class="left">左</div>
+		<div class="right">右</div>
+		<div class="top">上</div>
+		<div class="bottom">下</div>
+	</div>
+</body>
+</html>

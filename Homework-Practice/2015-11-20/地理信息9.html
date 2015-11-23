@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地理信息9</title>
+	<script type="text/javascript">
+	var id = navigator.geolocation.watchPosition(function(pos){
+		alert(pos.coords.longitude+','+pos.coords.latitude);
+	},function(err){
+		alert(err.code+','+err.message);
+	});
+	navigator.geolocation.clearWatch(id);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

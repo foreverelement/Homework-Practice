@@ -5,10 +5,39 @@
 	<title>3d图片环</title>
 	<style type="text/css">
 	body{background:#000;}
-	ul{width:133px;height:200px}
+	ul{width:133px;height:200px;margin:150px auto;position:relative;top:0;left:0;-webkit-transform:perspective(800px) rotateX(-15deg) rotateY(0deg);-webkit-transition:4s all ease;-webkit-transform-style:preserve-3d;}
+	ul:active{-webkit-transform:perspective(800px) rotateY(360deg) rotateX(-15deg);}
+	ul li{width:100%;height:100%;position:absolute;top:0;left:0;-webkit-transition:1s all ease;}
+	ul li img{width:100%}
 	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oUl = document.getElementById('ul1');
+		var aLi = oUl.children;
+		var i = aLi.length-1;
+		var timer = setInterval(function(){
+			aLi[i].style.WebkitTransform = 'rotateY('+i*360/aLi.length+'deg) translateZ(305px)';
+			i--;
+			if(i<0){
+				clearInterval(timer);
+			}
+		},30);
+	};
+	</script>
 </head>
 <body>
-	
+	<ul id="ul1">
+		<li><img src="img/1.jpg" /></li>
+		<li><img src="img/2.jpg" /></li>
+		<li><img src="img/3.jpg" /></li>
+		<li><img src="img/4.jpg" /></li>
+		<li><img src="img/5.jpg" /></li>
+		<li><img src="img/6.jpg" /></li>
+		<li><img src="img/7.jpg" /></li>
+		<li><img src="img/8.jpg" /></li>
+		<li><img src="img/9.jpg" /></li>
+		<li><img src="img/10.jpg" /></li>
+		<li><img src="img/11.jpg" /></li>
+	</ul>
 </body>
 </html>

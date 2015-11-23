@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地理信息5</title>
+	<script type="text/javascript">
+	navigator.geolocation.getCurrentPosition(function(pos){
+		pos.coords.longitude
+		pos.coords.latitude
+	},function(err){
+		alert(err.code+','+err.message);
+	});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
