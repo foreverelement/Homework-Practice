@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width;initial-scale=1.0,user-scalable=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>Document</title>
 	<style type="text/css">
 	*{margin:0;padding:0;list-style-type:none}
@@ -13,13 +13,13 @@
 	.header .nav{text-align:center;height:1.578rem;position:relative;background:-webkit-linear-gradient(top,#fff,#ebebeb);line-height:1.578rem;}
 	.header .nav .btn_back{position:absolute;top:0.343rem;left:0.343rem;background:url(images/btn_return.png) no-repeat;text-indent:-9999px;background-size:100%;width:1.906rem;height:0.906rem;}
 	.header .title{background:url(images/title_img.png) no-repeat;width:2.312rem;height:0.609rem;text-indent:-9999px;display:block;margin:0 auto;background-size:100%;position:absolute;top:50%;left:50%;margin:-0.304rem 0 0  -1.156rem;}
-	.header .banner{position:relative;height:4.953rem;}
-	.header .banner ul{width:100%;height:4.171rem;overflow:hidden;position:absolute;}
-	.header .banner ul li{width:10rem;height:4.171rem;overflow:hidden;top:0;left:0;position:absolute;}
-	.header .banner ul li img{width:100%;}
-	.header .banner ol{width:1.406rem;position:absolute;left:50%;bottom:0.301rem;margin-left:-0.703rem;}
-	.header .banner ol li{float:left;width:0.156rem;height:0.156rem;background:#a9a9a9;border-radius:50%;margin-right:0.125rem}
-	.header .banner ol li.cur{background:#ff4300;}
+	.header .slide{width:10rem;height:4.953rem;position:relative;overflow:hidden;}
+	.header .slide ul{width:50rem;height:4.171rem;position:absolute;top:0;left:0;}
+	.header .slide ul li{width:10rem;height:4.171rem;float:left;}
+	.header .slide ul li img{width:100%;height:100%;}
+	.header .slide ol{width:1.406rem;position:absolute;left:50%;bottom:0.301rem;margin-left:-0.703rem;}
+	.header .slide ol li{float:left;width:0.156rem;height:0.156rem;background:#a9a9a9;border-radius:50%;margin-right:0.125rem}
+	.header .slide ol li.cur{background:#ff4300;}
 
 	/*content*/
 	.content{padding:0 0.343rem}
@@ -80,7 +80,7 @@
 	.content .module div.c3{background:url(images/module_bg03.png) no-repeat -1rem 3.543rem #bcbcbc;background-size:2.625rem;}
 	.content .module div.t a span{display:block;color:#fff;line-height:0.815rem;text-align:center;margin-top:0.437rem;}
 	.content .module div.m{-webkit-box-flex:3;width:7.525rem;height:5.5rem;font-size:0.437rem;}
-	.content .module div.m ul{overflow:hidden;border-top:1px solid #EAEAEA;border-left:1px solid #EAEAEA;}
+	.content .module div.m ul{overflow:hidden;border-top:1px solid #EAEAEA;}
 	.content .module div.m ul li{float:left;border:1px solid #EAEAEA;margin-left:-1px;margin-top:-1px;width:2.328rem;height:1.359rem;text-align:center;line-height:1.359rem;}
 	.content .module div.m ul li:active{background:#f5f5f5}
 	.content .module div.m ul li a{display:block}
@@ -111,10 +111,72 @@
 
 	<script type="text/javascript">
 	window.onload = function(){
-			document.documentElement.style.fontSize = document.documentElement.clientWidth*0.1+'px';
+			var fontS = document.documentElement.clientWidth*32/320;
+			document.documentElement.style.fontSize = fontS+'px';
 			window.onresize = function(){
-					document.documentElement.style.fontSize = document.documentElement.clientWidth*0.1+'px';
+					var fontS = document.documentElement.clientWidth*32/320;
+					document.documentElement.style.fontSize = fontS+'px';
 			};
+
+		var oSlide = document.querySelector('.slide');
+		var oUl = oSlide.getElementsByTagName('ul')[0];
+		var aLi = oUl.children;
+		var oOl = oSlide.getElementsByTagName('ol')[0];
+		var aOl = oOl.children;
+
+		oUl.addEventListener('touchstart',function(ev){
+			var disX = ev.targetTouches[0].pageX/fontS-oUl.offsetLeft/fontS;
+
+			var startX = ev.targetTouches[0].pageX/fontS;
+			var startY = ev.targetTouches[0].pageY/fontS;
+			oUl.style.WebkitTransition = 'none';
+
+
+			var dir = '';
+			function fnMove(ev){
+				if(dir == ''){
+					if(Math.abs(ev.targetTouches[0].pageX/fontS-startX)>5/fontS){
+						dir = 'x';
+					}else if(Math.abs(ev.targetTouches[0].pageY/fontS-startY)>5/fontS){
+						dir = 'y';
+					}
+				}else{
+					if(dir == 'x'){
+						oUl.style.left = ev.targetTouches[0].pageX/fontS-disX+'rem';
+						ev.preventDefault();
+					}
+				}
+			
+			}
+			function fnEnd(){
+				oUl.removeEventListener('touchmove',fnMove,false);
+				oUl.removeEventListener('touchend',fnEnd,false);
+
+				var n = Math.round(oUl.offsetLeft/aLi[0].offsetWidth);
+				if(n>0){
+					n=0
+				}else if(n<-(aLi.length-1)){
+					n=-(aLi.length-1);
+				}
+
+				for(var i=0;i<aOl.length;i++){
+					aOl[i].className = '';
+				}
+				for(var i=0;i<aOl.length;i++){
+					aOl[Math.abs(n)].className = 'cur';
+				}
+
+				oUl.style.WebkitTransition = '0.8s all ease';
+				oUl.style.left = n*aLi[0].offsetWidth/fontS+'rem';
+
+
+			}
+
+			oUl.addEventListener('touchmove',fnMove,false);
+			oUl.addEventListener('touchend',fnEnd,false);
+			
+		},false);
+
 	};
 	</script>
 </head>
@@ -128,13 +190,13 @@
 		</nav>
 		<!-- nav end -->
 		<!-- slide begin -->
-		<section class="banner">
+		<section class="slide">
 			<ul>
-				<li><img src="images/banner.png"></li>
-				<li><img src="images/banner.png"></li>
-				<li><img src="images/banner.png"></li>
-				<li><img src="images/banner.png"></li>
-				<li><img src="images/banner.png"></li>
+				<li><img src="images/slide01.jpg"></li>
+				<li><img src="images/slide02.jpg"></li>
+				<li><img src="images/slide03.jpg"></li>
+				<li><img src="images/slide04.jpg"></li>
+				<li><img src="images/slide05.jpg"></li>
 			</ul>
 			<ol>
 				<li class="cur"></li>
