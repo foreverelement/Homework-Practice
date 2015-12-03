@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.2.5.min.css">
+	<style type="text/css">
+	.swiper-container{width:800px;height:600px;margin:50px auto;position:relative;}
+	</style>
+	
+	<script type="text/javascript">
+
+	window.onload = function(){
+		var mySwiper = new Swiper('.swiper-container',{
+			loop:true,
+			autoplay:1000,
+			effect : 'cube',
+			cube: {
+			  slideShadows: true,
+			  shadow: true,
+			  shadowOffset: 100,
+			  shadowScale: 0.6
+			},
+			prevButton:'.swiper-button-prev',
+			nextButton:'.swiper-button-next',
+		});
+	};
+	</script>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/1.jpg" width="800"></div>
+        <div class="swiper-slide"><img src="images/2.jpg" width="800"></div>
+        <div class="swiper-slide"><img src="images/3.jpg" width="800"></div>
+        <div class="swiper-slide"><img src="images/4.jpg" width="800"></div>
+        <div class="swiper-slide"><img src="images/5.jpg" width="800"></div>
+    </div>
+     <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<script type="text/javascript" src="js/swiper-3.2.5.min.js"></script>
+</body>
+</html>

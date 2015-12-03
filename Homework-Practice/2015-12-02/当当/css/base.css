@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors elemenT (foreverelemnt@163.com)
+ * @date    2015-12-02 17:55:31
+ * @version css reset v1.0
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, 
+h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, 
+big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, 
+thead, tr, th, td { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0; 
+    font-weight: inherit; 
+    font-style: inherit;  
+    font-family: inherit; 
+    vertical-align: baseline; 
+} 
+body{
+	background: #fff;
+  	color: #7d7d7d;
+  	font: 20px/28px Arial, Helvetica, sans-serif;
+}
+:focus { 
+    outline: 0; 
+} 
+table { 
+    border-collapse: separate; 
+    border-spacing: 0; 
+} 
+caption, th, td { 
+    text-align: left; 
+    font-weight: normal; 
+} 
+a img, iframe { 
+    border: none; 
+} 
+a{
+	text-decoration:none;
+	color:#ccc;
+}
+ol, ul { 
+    list-style: none; 
+} 
+input, textarea, select, button { 
+    font-size: 100%; 
+    font-family: inherit; 
+} 
+select { 
+    margin: inherit; 
+} 
+/* Fixes incorrect placement of numbers in ol’s in IE6/7 */ 
+ol { margin-left:2em;} 
+/* == clearfix == */ 
+.clearfix:after{display:block;content:'';clear:both;}
+.clearfix{zoom:1;overflow:hidden;};
+.clearfix {display: inline-block;} 
+* html .clearfix {height: 1%;} 
+.clearfix {display: block;}
+
+/*float*/
+.fl{float:left;}
+.fr{float:right}

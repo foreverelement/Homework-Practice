@@ -1,0 +1,74 @@
+笔记:
+
+===========================================================================
+
+单页面: 一个div装一个页面，简单的页面（页面少的项目适合用）
+
+
+jquery mobile:  单页面开发框架
+
+jquerymobile 是个'完美'spa框架
+
+*** 只能运行在服务器环境下
+
+使用jquerymobile只要一件事，只需要布局，并且分配角色就可以了
+
+data-  自定义属性，jqueryMobile 里所有的东西都在data里面
+
+data-role=""   分配角色
+
+
+data-role="button"   	按钮
+data-role="listView" 	列表
+
+data-role="page"   		分配页面
+data-transition="flip"  翻转
+data-rel="back"      	返回
+
+data-icon="refresh" 	刷新 (图标)
+
+
+===========================================================================
+
+zepto:  移动端的jquery
+
+zepto modules:
+zepto.min.js    核心模块,提供了最基本的方法
+event           提供事件绑定之类的
+ajax			交互
+form			表单
+ie				windowsphone
+
+以后用jquery和zepto事件绑定的时候，用on和off
+
+fx.js   	提供animate方法
+
+detect  	检测系统类型
+
+assets  	解决一些Ios的问题
+
+data    	缓存的东西
+
+deferred 	延迟，队列
+
+touch       触摸
+			tap			单击
+			singleTap	稍长的单击(稍微有点延迟)
+			longTap		长按
+			doubletap	双击
+
+			swipe       滑动
+			swipeLeft	向左滑
+			swipeRight	向右滑
+			swipeUp		往上滑
+			swipeDown   往下滑
+
+
+			gesture     手势
+
+作业：
+选项卡，拖拽   --  zepto
+
+iscroll --- 滚动
+swiper  --- 做各种的幻灯片
+

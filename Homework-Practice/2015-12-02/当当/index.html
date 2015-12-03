@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>当当</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<style type="text/css">
+	.header .nav{background:#f0f0f0;height:2.15rem;position:relative;}
+	.header .nav .logo{width:4.1rem;height:1.6rem;position:absolute;top:0.5rem;left:0.5rem;}
+	.header .nav .logo img{width:100%;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var fontS = document.documentElement.clientWidth*20/320;
+		document.documentElement.style.fontSize = fontS+'px';
+		window.onresize = function(){
+			fontS = document.documentElement.clientWidth*20/320;
+			document.documentElement.style.fontSize = fontS+'px';
+		};
+	};
+	</script>
+</head>
+<body>
+	<header class="header">
+		<nav class="nav">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+		</nav>
+	</header>
+</body>
+</html>
