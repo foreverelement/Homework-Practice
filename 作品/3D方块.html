@@ -8,12 +8,23 @@
 	#box div{width:300px;height:300px;border:#ccc 1px solid;position:absolute;top:0;left:0;}
 	.back{background:#FBC02D;-webkit-transform:translateZ(-150px)}
 	.left{background:#f60;-webkit-transform:translateX(-150px) rotateY(-90deg);}
-	.right{background:#399;-webkit-transform:translateX(150px) rotateY(90deg);}
+	.right{background:#FF6666;-webkit-transform:translateX(150px) rotateY(90deg);}
 	.top{background:#00BCD4;-webkit-transform:translateY(-150px) rotateX(-90deg);}
 	.bottom{background:#99CC66;-webkit-transform:translateY(150px) rotateX(90deg);}
 	.front{background:#3366CC;-webkit-transform:translateZ(150px);}
-	#box:hover{-webkit-transform:perspective(800px) rotateX(480deg) rotateY(480deg);}
+	/*#box:hover{-webkit-transform:perspective(800px) rotateX(480deg) rotateY(480deg);}*/
 	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oBox = document.getElementById('box');
+		var count = 0;
+		var timer = null;
+		timer = setInterval(function(){
+			count+=2;
+			oBox.style.WebkitTransform = 'perspective(800px) rotateX('+count+'deg) rotateY('+count+'deg)';
+		},16);
+	};
+	</script>
 </head>
 <body>
 	<div id="box">
