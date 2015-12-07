@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:#000; text-align:center;}
+#c1 {background:#fff;}
+</style>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var oImg=new Image();
+	
+	oImg.src='fish1.png';
+	
+	oImg.onload=function ()
+	{
+		//简易：drawImage(img, x, y);
+		//gd.drawImage(oImg, 100, 100);
+		
+		//完整：drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
+		/*
+		源：		sx, sy, sw, sh
+		目标：	dx, dy, dw, dh
+		*/
+		//每个鱼：55*37
+		gd.drawImage(oImg, 0, 37*1, 55, 37, 100, 100, 55, 37);
+	};
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+

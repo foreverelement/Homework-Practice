@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body {background:#000; text-align:center;}
+#c1 {background:url(img/game_bg_2_hd.jpg) no-repeat;}
+</style>
+<script>
+var json={};
+
+function loadImages(arr, fn)
+{
+	var count=0;
+	for(var i=0;i<arr.length;i++)
+	{
+		var oImg=new Image();
+		oImg.src=arr[i];
+		
+		(function (index){
+			oImg.onload=function ()
+			{
+				/*
+				json={'img/fish1.png': <IMG>, 'img/fish2.png': <IMG>};
+				*/
+				json[arr[index]]=this;
+				
+				count++;
+				
+				if(count==arr.length)
+				{
+					//都完成
+					fn();
+				}
+			};
+		})(i);
+	}
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	loadImages(['img/fish1.png', 'img/fish2.png', 'img/fish3.png', 'img/fish4.png', 'img/fish5.png'], function (){
+		gd.drawImage(json['img/fish3.png'], 100, 100);
+	});
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

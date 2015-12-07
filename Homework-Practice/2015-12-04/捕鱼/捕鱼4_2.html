@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body {background:#000; text-align:center;}
+#c1 {background:url(img/game_bg_2_hd.jpg) no-repeat;}
+</style>
+<script src="fish.js"></script>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+function a2d(n)
+{
+	return n*180/Math.PI;
+}
+
+//加载图片
+var json={};
+
+function loadImages(arr, fn)
+{
+	var count=0;
+	for(var i=0;i<arr.length;i++)
+	{
+		var oImg=new Image();
+		oImg.src=arr[i];
+		
+		(function (index){
+			oImg.onload=function ()
+			{
+				/*
+				json={'img/fish1.png': <IMG>, 'img/fish2.png': <IMG>};
+				*/
+				json[arr[index]]=this;
+				
+				count++;
+				
+				if(count==arr.length)
+				{
+					//都完成
+					fn();
+				}
+			};
+		})(i);
+	}
+}
+
+//炮
+var CANNON_SIZE=[
+	null,
+	{w: 74, h: 74},
+	{w: 74, h: 76},
+	{w: 74, h: 76},
+	{w: 74, h: 83},
+	{w: 74, h: 85},
+	{w: 74, h: 90},
+	{w: 74, h: 94}
+];
+
+function Cannon(type)
+{
+	this.type=type;
+	
+	//
+	this.x=0;
+	this.y=0;
+	
+	this.rotate=0;
+}
+
+Cannon.prototype.draw=function (gd)
+{
+	var w=CANNON_SIZE[this.type].w;
+	var h=CANNON_SIZE[this.type].h;
+	
+	gd.save();
+	
+	gd.translate(this.x, this.y);
+	gd.rotate(d2a(this.rotate));
+	
+	gd.drawImage(
+		//img
+		json['img/cannon'+this.type+'.png'],
+		//sx, sy, sw, sh
+		0, 0, w, h,
+		//dx, dy, dw, dh
+		-w/2, -h/2, w, h
+	);
+	
+	gd.restore();
+};
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var c=new Cannon(1);;	//炮
+	
+	loadImages([
+		//鱼
+		'img/fish1.png', 'img/fish2.png', 'img/fish3.png', 'img/fish4.png', 'img/fish5.png',
+		//炮
+		'img/cannon1.png', 'img/cannon2.png', 'img/cannon3.png', 'img/cannon4.png', 'img/cannon5.png', 'img/cannon6.png', 'img/cannon7.png',
+		//炮台
+		'img/bottom.png'
+	], function (){
+		setInterval(function (){
+			gd.clearRect(0, 0, oC.width, oC.height);
+			
+			//先画-炮台
+			gd.drawImage(
+				json['img/bottom.png'],
+				0, 0, 765, 70,
+				4, 532, 765, 70
+			);
+			
+			//后画-炮
+			c.x=431;
+			c.y=570;
+			
+			c.draw(gd);
+		}, 30);
+		
+		//
+	});
+	
+	//炮——转
+	document.onclick=function (ev)
+	{
+		var x=ev.clientX-oC.offsetLeft-c.x;
+		var y=c.y-ev.clientY+oC.offsetTop;
+		
+		var ang=a2d(Math.atan2(y, x));
+		
+		//alert(90-ang);
+		c.rotate=90-ang;
+	};
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+
